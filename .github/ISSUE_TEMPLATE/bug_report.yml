@@ -1,0 +1,70 @@
+name: Bug report
+description: Report an app, connection or control problem with reviewed diagnostics.
+title: '[Bug] '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please read the compatibility and diagnostics guides in the README first.
+        No personal contact details are needed. Do not attach Bluetooth addresses,
+        serial numbers, host names, personal paths, raw Console logs or packet dumps.
+        For security-sensitive problems, follow the README's private reporting instructions.
+  - type: input
+    id: version
+    attributes:
+      label: Hushbar version or source revision
+      placeholder: 0.1.0 or commit identifier
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version and Mac architecture
+      placeholder: macOS version, Apple silicon or Intel
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Product name, model code and firmware
+      description: Use the product name, not a personal Bluetooth name. Write unknown where needed.
+      placeholder: Headphone (1), B170, firmware 1.0.1.81
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Session mode
+      options:
+        - Live hardware
+        - Demo
+        - View snapshot
+        - No device connected
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps and features tried
+      description: Give the shortest sequence that reproduces the problem and name each control tried.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual result
+      description: Include visible errors and what the physical device did. Distinguish UI state from an observed hardware change.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Reviewed support report or cropped screenshot
+      description: Start capture, reproduce once, stop, review the complete JSON, then export. Attach only material you are comfortable making public. Reports exclude payloads and personal identifiers, but include model, firmware, OS version, timing and attempted actions.
+  - type: checkboxes
+    id: review
+    attributes:
+      label: Attachment review
+      options:
+        - label: I reviewed any attachments and removed personal information and raw local logs.
+          required: true

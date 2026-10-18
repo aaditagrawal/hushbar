@@ -1,0 +1,312 @@
+{
+  "148887": {
+    "name": "Nothing Ear (3a)",
+    "base": "B190"
+  },
+  "624011": {
+    "name": "Nothing ear (1)",
+    "base": "B181"
+  },
+  "810478": {
+    "name": "Nothing Headphone (a)",
+    "base": "B186",
+    "altBase": "B198"
+  },
+  "31D53D": {
+    "name": "Nothing ear (1)",
+    "base": "B181"
+  },
+  "1016DD": {
+    "name": "Ear (Stick)",
+    "base": "B157"
+  },
+  "ACC520": {
+    "name": "Ear (2)",
+    "base": "B155"
+  },
+  "DEE8C0": {
+    "name": "Ear (2)",
+    "base": "B155"
+  },
+  "FEB1C7": {
+    "name": "Nothing Ear",
+    "base": "B171"
+  },
+  "A20444": {
+    "name": "Nothing Ear",
+    "base": "B171"
+  },
+  "5E3FBC": {
+    "name": "Nothing Ear (a)",
+    "base": "B162"
+  },
+  "03464E": {
+    "name": "Nothing Ear (a)",
+    "base": "B162"
+  },
+  "8B6380": {
+    "name": "Nothing Ear (a)",
+    "base": "B162"
+  },
+  "FC3AAF": {
+    "name": "Nothing Ear (open)",
+    "base": "B174"
+  },
+  "5F8F82": {
+    "name": "Buds Pro",
+    "base": "B163"
+  },
+  "2EB1CA": {
+    "name": "Buds Pro",
+    "base": "B163"
+  },
+  "ADD2C4": {
+    "name": "Buds Pro",
+    "base": "B163"
+  },
+  "4DFC4A": {
+    "name": "Neckband Pro",
+    "base": "B164"
+  },
+  "26C190": {
+    "name": "Neckband Pro",
+    "base": "B164"
+  },
+  "AE35FD": {
+    "name": "Neckband Pro",
+    "base": "B164"
+  },
+  "D35E18": {
+    "name": "CMF Buds",
+    "base": "B168"
+  },
+  "ACCE54": {
+    "name": "CMF Buds",
+    "base": "B168"
+  },
+  "150A27": {
+    "name": "CMF Buds",
+    "base": "B168"
+  },
+  "F29566": {
+    "name": "CMF Buds Pro 2",
+    "base": "B172"
+  },
+  "CA36A6": {
+    "name": "CMF Buds Pro 2",
+    "base": "B172"
+  },
+  "A7B220": {
+    "name": "CMF Buds Pro 2",
+    "base": "B172"
+  },
+  "2B353E": {
+    "name": "CMF Buds Pro 2",
+    "base": "B172"
+  },
+  "C34F3B": {
+    "name": "Nothing Ear (a)",
+    "base": "B162",
+    "altBase": "B183"
+  },
+  "404D6D": {
+    "name": "Nothing Ear (a)",
+    "base": "B162",
+    "altBase": "B183"
+  },
+  "839E9A": {
+    "name": "Nothing Ear (a)",
+    "base": "B162",
+    "altBase": "B183"
+  },
+  "19EF24": {
+    "name": "CMF Buds 2",
+    "base": "B179"
+  },
+  "FF2AB0": {
+    "name": "CMF Buds 2",
+    "base": "B179"
+  },
+  "D9AB5D": {
+    "name": "CMF Buds 2",
+    "base": "B179"
+  },
+  "3B1320": {
+    "name": "CMF Buds 2",
+    "base": "B197"
+  },
+  "359A7D": {
+    "name": "CMF Buds 2",
+    "base": "B197"
+  },
+  "00FDED": {
+    "name": "CMF Buds 2",
+    "base": "B197"
+  },
+  "5C587F": {
+    "name": "CMF Buds 2 Plus",
+    "base": "B184"
+  },
+  "4AEB6E": {
+    "name": "CMF Buds 2 Plus",
+    "base": "B184"
+  },
+  "70F8E3": {
+    "name": "CMF Buds 2a",
+    "base": "B185"
+  },
+  "ED5412": {
+    "name": "CMF Buds 2a",
+    "base": "B185"
+  },
+  "509CAE": {
+    "name": "CMF Buds 2a",
+    "base": "B185"
+  },
+  "2F45F5": {
+    "name": "CMF Buds Pro 2",
+    "base": "B172",
+    "altBase": "B187"
+  },
+  "E1BE45": {
+    "name": "CMF Buds Pro 2",
+    "base": "B172",
+    "altBase": "B187"
+  },
+  "1253C0": {
+    "name": "CMF Buds Pro 2",
+    "base": "B172",
+    "altBase": "B187"
+  },
+  "0F1A4F": {
+    "name": "CMF Buds Pro 2",
+    "base": "B172",
+    "altBase": "B187"
+  },
+  "F51D3D": {
+    "name": "CMF Buds Pro 2",
+    "base": "B195"
+  },
+  "A544CE": {
+    "name": "CMF Buds Pro 2",
+    "base": "B195"
+  },
+  "9EAC04": {
+    "name": "CMF Buds Pro 2",
+    "base": "B195"
+  },
+  "1D07D4": {
+    "name": "CMF Buds Pro 2",
+    "base": "B195"
+  },
+  "53BFE6": {
+    "name": "CMF Buds Pro 2",
+    "base": "B195"
+  },
+  "072714": {
+    "name": "CMF Buds Pro 2",
+    "base": "B195"
+  },
+  "C19ECD": {
+    "name": "Nothing Headphone (1)",
+    "base": "B170"
+  },
+  "2D6FDA": {
+    "name": "Nothing Headphone (1)",
+    "base": "B170"
+  },
+  "7D46E5": {
+    "name": "Nothing Ear (3)",
+    "base": "B173",
+    "altBase": "B201"
+  },
+  "C1EBFD": {
+    "name": "Nothing Ear (3)",
+    "base": "B173",
+    "altBase": "B201"
+  },
+  "563DA5": {
+    "name": "CMF Headphone Pro",
+    "base": "B175"
+  },
+  "73C9EB": {
+    "name": "CMF Headphone Pro",
+    "base": "B175"
+  },
+  "1EFB39": {
+    "name": "CMF Headphone Pro",
+    "base": "B175"
+  },
+  "BFD53B": {
+    "name": "Nothing Headphone (a)",
+    "base": "B186"
+  },
+  "DE8953": {
+    "name": "Nothing Headphone (a)",
+    "base": "B186"
+  },
+  "97EF75": {
+    "name": "Nothing Headphone (a)",
+    "base": "B186",
+    "altBase": "B198"
+  },
+  "98D02B": {
+    "name": "Nothing Headphone (a)",
+    "base": "B186"
+  },
+  "6F6C71": {
+    "name": "Nothing Headphone (a)",
+    "base": "B186",
+    "altBase": "B198"
+  },
+  "79B3A9": {
+    "name": "Nothing Headphone (a)",
+    "base": "B186",
+    "altBase": "B198"
+  },
+  "A292C6": {
+    "name": "Nothing Headphone (a)",
+    "base": "B186",
+    "altBase": "B198"
+  },
+  "CC3444": {
+    "name": "Nothing Ear (open)",
+    "base": "B174"
+  },
+  "7B2328": {
+    "name": "Nothing Ear (3a)",
+    "base": "B190"
+  },
+  "E9C3BE": {
+    "name": "Nothing Ear (3a)",
+    "base": "B190"
+  },
+  "DB45D3": {
+    "name": "Nothing Ear (3a)",
+    "base": "B190"
+  },
+  "8F28ED": {
+    "name": "CMF Clip Pro",
+    "base": "B189"
+  },
+  "E6673A": {
+    "name": "CMF Clip Pro",
+    "base": "B189"
+  },
+  "DCD2CB": {
+    "name": "CMF Clip Pro",
+    "base": "B189"
+  },
+  "DA1280": {
+    "name": "CMF Clip Pro",
+    "base": "B189"
+  },
+  "CDFDEC": {
+    "name": "Nothing Headphone (1) Pro",
+    "base": "B192"
+  },
+  "086485": {
+    "name": "Nothing Headphone (1) Pro",
+    "base": "B192"
+  }
+}

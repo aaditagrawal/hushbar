@@ -1,0 +1,23 @@
+name: Feature request
+description: Explain the task a proposed change would help with.
+title: '[Feature] '
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: Describe the workflow and current limitation. Do not include personal contact details or device identifiers.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Include the product and firmware if the request is device-specific. Public product names are enough.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Alternatives or protocol evidence
+      description: Link to public documentation or describe alternatives you tried. Do not attach private captures or vendor binaries.

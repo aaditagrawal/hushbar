@@ -1,0 +1,17 @@
+{
+  "singleBattery": ["B164", "B170", "B175", "B186", "B192"],
+  "alternateFrameRoutes": ["B170"],
+  "stereoRing": ["B164", "B170", "B186", "B192"],
+  "legacyRing": ["B181"],
+  "listeningMode": ["B172", "B195", "B168", "B179", "B197", "B184", "B185", "B175", "B189"],
+  "noWearDetection": ["B174", "B185", "B175", "B189", "B186"],
+  "bassWritable": ["B171", "B172", "B195", "B168", "B162", "B184", "B179", "B197", "B170", "B164", "B173", "B189", "B186"],
+  "threeStageBass": ["B189", "B186", "B195", "B197"],
+  "personalizedANC": ["B155"],
+  "earFit": ["B155", "B171", "B172", "B195", "B162", "B184", "B179", "B197", "B173"],
+  "noDirac": ["B175", "B189"],
+  "diracID7": ["B185"],
+  "noCustomEQ": ["B181"],
+  "detailEQ": ["B192"],
+  "firmwareANC": ["B157"]
+}

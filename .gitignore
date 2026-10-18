@@ -1,0 +1,24 @@
+.DS_Store
+**/.build/
+**/.swiftpm/
+dist/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.log
+*.jsonl
+*.trace
+*.dSYM/
+.env
+.env.*
+!.env.example
+# Local support captures and manual hardware validation must stay private.
+support-reports/
+captures/
+validation/
+Hushbar-support-*.json
+hushbar-support-*.json
+*.p12
+*.p8
+*.mobileprovision
+*.provisionprofile

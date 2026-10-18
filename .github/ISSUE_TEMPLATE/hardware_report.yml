@@ -1,0 +1,59 @@
+name: Hardware compatibility report
+description: Record exact model and firmware evidence, including failures.
+title: '[Hardware] '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Catalogue entries are not guaranteed support. Report each observed result
+        separately. EQ writes and ringing are still unverified; start with connection
+        and reads. No personal contact details, addresses, serial numbers, host names,
+        personal paths, raw packet data or local logs are needed.
+  - type: input
+    id: model
+    attributes:
+      label: Product and model code
+      description: Use the catalogue product name, not a renamed personal device.
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: Exact firmware version
+      description: Use unknown if you cannot read it; do not guess.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Hushbar version or revision, macOS version and architecture
+    validations:
+      required: true
+  - type: textarea
+    id: connection
+    attributes:
+      label: Connection and read results
+      description: Did identification and connection finish? Which values were read? Mention missing values, errors and reconnect behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: controls
+    attributes:
+      label: Features tried and observed results
+      description: List each control separately as not tried, read only, observed working, failed or uncertain. Include the actual device response, confirmation or rollback. A connected device does not mean all controls work.
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: Reviewed support report
+      description: Optional. Follow the README's "Report a hardware problem" section to capture a short live session, stop, review and export JSON. Attach only reviewed metadata reports and cropped screenshots.
+  - type: checkboxes
+    id: evidence
+    attributes:
+      label: Evidence and privacy
+      options:
+        - label: These observations came from live hardware, with untried or uncertain features identified.
+          required: true
+        - label: I reviewed attachments and excluded personal information and raw logs.
+          required: true

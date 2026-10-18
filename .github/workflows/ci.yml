@@ -1,0 +1,55 @@
+name: Build and test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  portable:
+    name: Swift 6 portable packages
+    runs-on: ubuntu-24.04
+    container: swift:6.0-noble
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+      - name: Check catalogue and public repository files
+        run: scripts/check.sh
+      - name: Test protocol and diagnostics without Apple frameworks
+        run: scripts/test.sh --portable
+
+  macos:
+    name: macOS app and every package
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Show selected Swift 6 toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+      - name: Test each package and root app
+        run: scripts/test.sh
+      - name: Build standalone ad-hoc signed app
+        run: scripts/build-app.sh
+      - name: Archive build for review
+        run: ditto -c -k --sequesterRsrc --keepParent dist/Hushbar.app dist/Hushbar-ci.zip
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: Hushbar-macos-ci
+          path: dist/Hushbar-ci.zip
+          if-no-files-found: error
+          retention-days: 7

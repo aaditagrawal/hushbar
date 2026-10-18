@@ -1,0 +1,99 @@
+name: Prepare draft release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing version tag, matching VERSION, such as v0.1.0
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    name: Prepare ${{ matrix.arch }} artifacts
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            arch: arm64
+          - runner: macos-15-intel
+            arch: x86_64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+      - name: Test, package and record corresponding source
+        env:
+          RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+          HUSHBAR_ARCH: ${{ matrix.arch }}
+        run: scripts/release.sh "$RELEASE_TAG"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: release-${{ matrix.arch }}
+          path: dist/release/*
+          if-no-files-found: error
+          retention-days: 14
+
+  draft:
+    name: Create or update draft only
+    if: github.repository == 'aaditagrawal/hushbar'
+    needs: prepare
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      # gh can download the current run's artifacts without another action.
+      - name: Download verified artifacts and create a draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: aaditagrawal/hushbar
+          RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+        run: |
+          set -euo pipefail
+          [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          gh run download "$GITHUB_RUN_ID" --repo "$GH_REPO" --pattern 'release-*' --dir artifacts
+          mkdir -p assets
+          cp artifacts/release-arm64/* assets/
+          # The source archive must be identical for both architecture builds.
+          cmp artifacts/release-arm64/*-source.tar.gz artifacts/release-x86_64/*-source.tar.gz
+          cp artifacts/release-x86_64/* assets/
+          (cd assets && sha256sum --check *-SHA256SUMS.txt)
+          cat > release-notes.md <<'EOF'
+          Draft for maintainer review. These are ad-hoc signed, unnotarized builds.
+          Choose arm64 for Apple silicon or x86_64 for Intel. Source archives,
+          build recipes, and SHA-256 hashes accompany both app archives.
+
+          Only Headphone (1) firmware 1.0.1.81 has been hardware-checked.
+          Twenty catalogue names do not imply verified hardware support.
+          A live Advanced profile read returned eight bands. EQ writes and
+          ringing remain unverified. Review compatibility and known limitations
+          in the README before testing.
+
+          The workflow creates or updates drafts only. A maintainer must review
+          the artifacts, release notes, licensing and compatibility evidence
+          before deciding whether to publish.
+          EOF
+          if gh release view "$RELEASE_TAG" --repo "$GH_REPO" --json isDraft > release-state.json 2>/dev/null; then
+            test "$(jq -r .isDraft release-state.json)" = true || { echo 'Refusing to modify a published release.' >&2; exit 1; }
+            gh release upload "$RELEASE_TAG" assets/* --repo "$GH_REPO" --clobber
+          else
+            gh release create "$RELEASE_TAG" assets/* --repo "$GH_REPO" \
+              --verify-tag --draft --title "Hushbar ${RELEASE_TAG#v}" --notes-file release-notes.md
+          fi

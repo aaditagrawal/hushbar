@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>Hushbar</title>
+  <desc>An H built from two rounded audio bars and a central control.</desc>
+  <rect x="84" y="84" width="856" height="856" rx="190" fill="#232B28"/>
+  <rect x="86" y="86" width="852" height="852" rx="188" fill="none" stroke="#D3E7D9" stroke-opacity=".14" stroke-width="4"/>
+  <rect x="348" y="480" width="328" height="64" rx="32" fill="#C8E3D2"/>
+  <rect x="300" y="326" width="96" height="372" rx="48" fill="#C8E3D2"/>
+  <rect x="628" y="238" width="96" height="548" rx="48" fill="#C8E3D2"/>
+  <circle cx="512" cy="512" r="46" fill="#F4F0E8"/>
+</svg>
